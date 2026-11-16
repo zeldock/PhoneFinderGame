@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://df0fkq2yiouo8"]
+
+[ext_resource type="PackedScene" uid="uid://hvkdthvc2paj" path="res://glb_models/misc/CounterIsland.glb" id="1_nqfgv"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0as02"]
+points = PackedVector3Array(-1, -1, -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, 1, -1, -1, -1, -1, 1, -1, 1, -1)
+
+[node name="CounterIsland" unique_id=1554311397 instance=ExtResource("1_nqfgv")]
+
+[node name="CounterIbottom_Baked" parent="." index="0" unique_id=1414291777]
+transform = Transform3D(3.9072392, 0, 0, 0, 1.77, 0, 0, 0, 1.83541, 0.30198097, 0, -2.0296113)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CounterIbottom_Baked" index="0" unique_id=1233276417]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CounterIbottom_Baked/StaticBody3D" index="0" unique_id=169447188]
+shape = SubResource("ConvexPolygonShape3D_0as02")
+
+[node name="CounterItop_Baked" parent="." index="1" unique_id=1222498871]
+transform = Transform3D(4.3315496, 0, 0, 0, -0.162883, 0, 0, 0, 2.034728, 0.30198097, 1.7332425, -2.0296113)

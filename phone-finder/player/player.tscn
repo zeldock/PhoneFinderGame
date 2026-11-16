@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://oqqcmv4sl3p1" path="res://player/player.gd" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://b7xjml60ra0c2" path="res://player/fp_cam.gd" id="2_rkbax"]
 [ext_resource type="Script" uid="uid://dha645kbd84mk" path="res://player/playerinteract.gd" id="3_g1dw6"]
+[ext_resource type="PackedScene" uid="uid://b3b5d0826bmmc" path="res://ui/player_ui.tscn" id="4_yw30f"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bhunq"]
 
@@ -25,6 +26,15 @@ script = ExtResource("2_rkbax")
 [node name="Camera3D" type="Camera3D" parent="head" unique_id=1661760569]
 
 [node name="RayCast3D" type="RayCast3D" parent="head" unique_id=2044491488]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.023266554, 0)
 target_position = Vector3(0, -1.5, 0)
 script = ExtResource("3_g1dw6")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="head" unique_id=440759153]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.6547425)
+visible = false
+shadow_enabled = true
+spot_range = 7.0048656
+spot_angle = 28.382854
+
+[node name="player_ui" parent="." unique_id=1585987197 instance=ExtResource("4_yw30f")]

@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://b3b5d0826bmmc"]
+
+[ext_resource type="Texture2D" uid="uid://bi6qw4wdpvj6y" path="res://ui/crosshair.png" id="1_cfom6"]
+[ext_resource type="Texture2D" uid="uid://cyhweeslj1lg8" path="res://ui/crosshairunlock.png" id="2_vq5xy"]
+[ext_resource type="Shader" uid="uid://q28yjmlqrasi" path="res://shaders/pausemenushader.gdshader" id="3_ehg4m"]
+[ext_resource type="Script" uid="uid://cx3echy7u631k" path="res://ui/pause_menu.gd" id="3_iwa1g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vq5xy"]
+shader = ExtResource("3_ehg4m")
+shader_parameter/blur_amount = 2.5
+
+[node name="player_ui" type="Node2D" unique_id=1585987197]
+
+[node name="MainCrosshair" type="CanvasLayer" parent="." unique_id=73690660]
+
+[node name="crosshair" type="CenterContainer" parent="MainCrosshair" unique_id=1841157348]
+offset_left = 132.0
+offset_top = 78.0
+offset_right = 1285.0
+offset_bottom = 724.0
+scale = Vector2(0.77204853, 0.7590886)
+
+[node name="crosshairtexture" type="TextureRect" parent="MainCrosshair/crosshair" unique_id=86521526]
+layout_mode = 2
+texture = ExtResource("1_cfom6")
+
+[node name="UnlockCrosshair" type="CanvasLayer" parent="." unique_id=914991034]
+
+[node name="crosshairunlock" type="CenterContainer" parent="UnlockCrosshair" unique_id=1274590520]
+offset_left = 132.0
+offset_top = 78.0
+offset_right = 1285.0
+offset_bottom = 724.0
+scale = Vector2(0.77204853, 0.7590886)
+
+[node name="crosshairtexture" type="TextureRect" parent="UnlockCrosshair/crosshairunlock" unique_id=689305842]
+layout_mode = 2
+texture = ExtResource("2_vq5xy")
+
+[node name="TextBox" type="CanvasLayer" parent="." unique_id=726149452]
+
+[node name="container" type="CenterContainer" parent="TextBox" unique_id=1600792704]
+offset_left = 390.0
+offset_top = 505.0
+offset_right = 777.0
+offset_bottom = 545.0
+
+[node name="hud" type="Label" parent="TextBox/container" unique_id=58753956]
+layout_mode = 2
+
+[node name="PauseMenu" type="CanvasLayer" parent="." unique_id=92676795]
+process_mode = 3
+script = ExtResource("3_iwa1g")
+
+[node name="Control" type="Control" parent="PauseMenu" unique_id=699641475]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.760002, 16.2)
+
+[node name="Blur" type="ColorRect" parent="PauseMenu/Control" unique_id=395156966]
+material = SubResource("ShaderMaterial_vq5xy")
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Control2" type="Control" parent="PauseMenu" unique_id=1473612071]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.840004, 16.200003)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/Control2" unique_id=1817944293]
+propagate_maximum_size = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -39.029125
+offset_top = -25.679014
+offset_right = 2.9708748
+offset_bottom = 40.320984
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.18654647, 0.18654647)
+
+[node name="PlayButton" type="Button" parent="PauseMenu/Control2/VBoxContainer" unique_id=304657599]
+layout_mode = 2
+text = "Play"
+
+[node name="Quit" type="Button" parent="PauseMenu/Control2/VBoxContainer" unique_id=1059029181]
+layout_mode = 2
+text = "Quit
+"

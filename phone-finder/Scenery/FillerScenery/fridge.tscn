@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c75p4mytc63lm"]
+
+[ext_resource type="PackedScene" uid="uid://dle82tueh8rut" path="res://glb_models/misc/Fridge.glb" id="1_b4bry"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_b4bry"]
+points = PackedVector3Array(0.9997848, 1, 1, 0.9997848, 1, -1, -1, 1, 1, 0.9997848, -1, 1, 1.1282482, 0.12451053, 0.8754895, 1.0750756, 0.96221614, 0.8999609, 1.2292316, 0.9136648, -0.761942, 0.9997848, -1, -1, -1, 1, -1, 1.2292316, 0.9136648, -0.8310493, 1.2824044, 0.075959325, -0.82889587, -1, -1, 1, 1.2824044, -0.90407205, -0.761942, 1.1282482, -0.95242757, 0.8754895, 1.2824044, 0.075959325, -0.761942, -1, -1, -1, 1.2824044, -0.90407205, -0.82889587)
+
+[node name="Fridge" unique_id=871807193 instance=ExtResource("1_b4bry")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fridge_Baked" parent_id_path=PackedInt32Array(1247810103) index="0" unique_id=854252934]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fridge_Baked/StaticBody3D" index="0" unique_id=683248526]
+shape = SubResource("ConvexPolygonShape3D_b4bry")

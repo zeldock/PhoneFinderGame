@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cidpb1vc25uy7"]
+
+[ext_resource type="PackedScene" uid="uid://dug8ni0abr6bu" path="res://glb_models/misc/Carpet.glb" id="1_sb4st"]
+
+[node name="Carpet" unique_id=1480048133 instance=ExtResource("1_sb4st")]

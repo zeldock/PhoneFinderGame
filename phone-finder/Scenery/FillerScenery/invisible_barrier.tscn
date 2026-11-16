@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://hild23sspsk2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bhunq"]
+
+[node name="InvisibleBarrier" type="Node3D" unique_id=1711558402]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=311698050]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1637592635]
+shape = SubResource("BoxShape3D_bhunq")

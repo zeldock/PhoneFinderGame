@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://q5a0q85w01xj"]
 
 [ext_resource type="Texture2D" uid="uid://dd857l7tc1wls" path="res://glb_models/Outside Drawer/OutsideDrawer_CenterDrawer_Bake1_PBR_Diffuse.png" id="1_siwlt"]
+[ext_resource type="Script" uid="uid://ht5xr6su4kqy" path="res://general scripts/door.gd" id="1_yjusy"]
 [ext_resource type="Texture2D" uid="uid://cge14vhi63xen" path="res://glb_models/Outside Drawer/OutsideDrawer_LeftFoot.png" id="2_yjusy"]
 [ext_resource type="Texture2D" uid="uid://bkyl64kch4ny1" path="res://glb_models/Outside Drawer/OutsideDrawer_nobcenter_Bake1_PBR_Diffuse.png" id="3_gvmm8"]
 [ext_resource type="Texture2D" uid="uid://dpiguko4je1lj" path="res://glb_models/Outside Drawer/OutsideDrawer_Outside Drawer_Bake1_PBR_Diffuse.png" id="4_m83dp"]
@@ -45,6 +46,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_hupwb")
 
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_siwlt"]
+data = PackedVector3Array(-0.9842, -0.7412, 0.914, -0.9842, 1, -0.914, -0.9842, -0.7412, -0.914, -0.9842, -0.7412, 0.914, -0.9842, 1, 0.914, -0.9842, 1, -0.914, -0.9842, -0.7412, -0.914, 0.8438, 1, -0.914, 0.8438, -0.7412, -0.914, -0.9842, -0.7412, -0.914, -0.9842, 1, -0.914, 0.8438, 1, -0.914, 0.8438, -0.7412, -0.914, 0.8438, 1, 0.914, 0.8438, -0.7412, 0.914, 0.8438, -0.7412, -0.914, 0.8438, 1, -0.914, 0.8438, 1, 0.914, 0.8438, -0.7412, 0.914, -0.9842, 1, 0.914, -0.9842, -0.7412, 0.914, 0.8438, -0.7412, 0.914, 0.8438, 1, 0.914, -0.9842, 1, 0.914, -0.9842, -0.7412, -0.914, 0.8438, -0.7412, 0.914, -0.9842, -0.7412, 0.914, -0.9842, -0.7412, -0.914, 0.8438, -0.7412, -0.914, 0.8438, -0.7412, 0.914, -1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, 1, 1, 0.8438, 1, -0.914, 1, 1, -1, -0.9842, 1, -0.914, 1, 1, -1, 0.8438, 1, -0.914, 1, 1, 1, 0.8438, 1, 0.914, 0.8438, 1, -0.914, -0.9842, 1, -0.914, -1, 1, -1, 1, 1, -1, 0.8438, 1, 0.914, 1, 1, 1, -1, 1, 1, -1, 1, -1, -0.9842, 1, -0.914, -0.9842, 1, 0.914, 0.8438, 1, 0.914, -1, 1, 1, -0.9842, 1, 0.914, -1, 1, -1, -0.9842, 1, 0.914, -1, 1, 1)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w4wfg"]
 resource_name = "nobcenter_Baked"
 cull_mode = 2
@@ -85,6 +89,43 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wgnw1")
+
+[sub_resource type="Animation" id="Animation_siwlt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_yjusy"]
+resource_name = "open"
+length = 0.56666666
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.56666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1.581948, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gvmm8"]
+_data = {
+&"RESET": SubResource("Animation_siwlt"),
+&"open": SubResource("Animation_yjusy")
+}
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_if04m"]
 resource_name = "LeftFoot.001_Baked"
@@ -208,15 +249,27 @@ size = Vector3(2.4501343, 3.4014282, 6.44812)
 
 [node name="OutsideDrawer" type="Node3D" unique_id=1715299349]
 
-[node name="Drawer" type="Node3D" parent="." unique_id=722439514]
+[node name="drawer2" type="Node3D" parent="." unique_id=722439514]
+script = ExtResource("1_yjusy")
 
-[node name="CenterDrawer_Baked" type="MeshInstance3D" parent="Drawer" unique_id=286181195]
+[node name="CenterDrawer_Baked" type="MeshInstance3D" parent="drawer2" unique_id=286181195]
 transform = Transform3D(0.94479257, 0, 0, 0, 0.5174251, 0, 0, 0, 1.2465888, 0.29368988, 0.8026726, 0.007917475)
 mesh = SubResource("ArrayMesh_jk5jh")
 
-[node name="nobcenter_Baked" type="MeshInstance3D" parent="Drawer" unique_id=1078686152]
+[node name="drawer" type="StaticBody3D" parent="drawer2/CenterDrawer_Baked" unique_id=2003623251]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="drawer2/CenterDrawer_Baked/drawer" unique_id=903209939]
+shape = SubResource("ConcavePolygonShape3D_siwlt")
+
+[node name="nobcenter_Baked" type="MeshInstance3D" parent="drawer2" unique_id=1078686152]
 transform = Transform3D(0, -0.06533589, 4.249375e-08, -0.26082474, 1.7342207e-15, 4.249375e-08, -4.249375e-08, -1.064457e-08, -0.26082474, 1.4378136, 0.7862694, 0.021355461)
 mesh = SubResource("ArrayMesh_ivj3k")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="drawer2" unique_id=1391501465]
+libraries/ = SubResource("AnimationLibrary_gvmm8")
+
+[node name="KeySpawn" type="Marker3D" parent="drawer2" unique_id=172134177]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.819803, 0)
 
 [node name="LeftFoot_001_Baked" type="MeshInstance3D" parent="." unique_id=368944342]
 transform = Transform3D(1, 0, 0, 0, 0.36250693, 0, 0, 0, -0.30722833, 0, -1.2118385, 2.5473983)

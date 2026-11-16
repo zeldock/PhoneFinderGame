@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://mpf28x6cjw67"]
+
+[ext_resource type="PackedScene" uid="uid://c0k0hyoeww651" path="res://glb_models/misc/Lamp.glb" id="1_agg7f"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_q66li"]
+height = 64.046555
+radius = 1.0
+
+[node name="Lamp" unique_id=1981326808 instance=ExtResource("1_agg7f")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="LampBase_Baked" parent_id_path=PackedInt32Array(1610584436) index="0" unique_id=533300023]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 31.023277, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LampBase_Baked/StaticBody3D" index="0" unique_id=1830705173]
+shape = SubResource("CylinderShape3D_q66li")

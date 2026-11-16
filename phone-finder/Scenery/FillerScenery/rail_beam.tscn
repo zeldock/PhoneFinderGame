@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b2f0dtcupgjiw"]
+
+[ext_resource type="PackedScene" uid="uid://bre07xqk0sqce" path="res://glb_models/misc/RailBeam.glb" id="1_v1oxy"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_v1oxy"]
+points = PackedVector3Array(-1.557374, 1.0162827, -1.557374, -1.557374, 1.1274308, -1.557374, 1.557374, 1.0162827, -1.557374, -1.0000365, -0.76505053, -1.0000365, -1.557374, 1.0162827, 1.557374, -1.557374, 1.1274308, 1.557374, 1.557374, 1.1274308, -1.557374, 1.557374, 1.0162827, 1.557374, 0.9997318, -0.76505053, -1.0000365, -1.0000365, -0.76505053, 0.9997318, 1.557374, 1.1274308, 1.557374, 0.9997318, -0.76505053, 0.9997318)
+
+[node name="RailBeam" unique_id=879245817 instance=ExtResource("1_v1oxy")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RailCentral beam_Baked" parent_id_path=PackedInt32Array(641988200) index="0" unique_id=1137273773]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RailCentral beam_Baked/StaticBody3D" index="0" unique_id=532199412]
+shape = SubResource("ConvexPolygonShape3D_v1oxy")
