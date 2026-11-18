@@ -25,6 +25,8 @@
 [ext_resource type="PackedScene" uid="uid://b0dg8j54keygt" path="res://Scenery/FillerScenery/rail_rail.tscn" id="22_werwd"]
 [ext_resource type="PackedScene" uid="uid://hild23sspsk2" path="res://Scenery/FillerScenery/invisible_barrier.tscn" id="23_werwd"]
 [ext_resource type="PackedScene" uid="uid://bhrrrhaoqgq5t" path="res://Scenery/FillerScenery/car.tscn" id="24_of21v"]
+[ext_resource type="PackedScene" uid="uid://dr4bykn57cxlh" path="res://Scenery/items/stepping_stoolfixed.tscn" id="25_80cyg"]
+[ext_resource type="PackedScene" uid="uid://dqprubx4gdadm" path="res://paper.tscn" id="26_mca5t"]
 
 [sub_resource type="Gradient" id="Gradient_pb8y7"]
 offsets = PackedFloat32Array(0, 0.58299595)
@@ -130,7 +132,7 @@ transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5
 [node name="key" parent="Furniture/Drawers/DrawerOfficeKey/drawer2/KeySpawn" parent_id_path=PackedInt32Array(1467624419, 172134177) index="0" unique_id=1854580271 instance=ExtResource("7_ukwr8")]
 transform = Transform3D(-2.6226832e-08, 0, -0.59999996, 0, 0.59999996, 0, 0.59999996, 0, -2.6226832e-08, -0.05703926, 0.10615337, 0.7185242)
 
-[node name="Key" parent="Furniture/Drawers/DrawerOfficeKey/drawer2/KeySpawn/key" index="0" unique_id=1438604742]
+[node name="Key" parent="Furniture/Drawers/DrawerOfficeKey/drawer2/KeySpawn/key" index="0" unique_id=431662831]
 transform = Transform3D(0.5814271, 0, 0, 0, 0.13785954, 0, 0, 0, 0.5814271, -0.43572426, 0, 0)
 
 [node name="Outside Drawer_Baked" parent="Furniture/Drawers/DrawerOfficeKey" index="2" unique_id=1285183227]
@@ -151,6 +153,7 @@ transform = Transform3D(-1.7484556e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.7484556e-
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12.383094, 0.11869836, -10.570234)
 
 [node name="Carpet" type="Node3D" parent="Furniture" unique_id=1703646108]
+visible = false
 
 [node name="Carpet" parent="Furniture/Carpet" unique_id=1480048133 instance=ExtResource("10_pb8y7")]
 transform = Transform3D(-2.4929468e-08, 0, -0.56025696, 0, 1, 0, 0.5703198, 0, -2.4489609e-08, 0, -0.85902894, 4.502254)
@@ -291,7 +294,7 @@ transform = Transform3D(-0.6, -1.5062922e-08, -3.849454e-07, 3.126455e-08, 0.481
 [node name="InvisibleBarriers" type="Node3D" parent="Furniture" unique_id=1452842616]
 
 [node name="InvisibleBarrier" parent="Furniture/InvisibleBarriers" unique_id=1711558402 instance=ExtResource("23_werwd")]
-transform = Transform3D(0.165, 0, 0, 0, 1.6021403, 7.2759447, 0, -1.2901144, 9.035698, 0.62927413, -2.191696, -4.619423)
+transform = Transform3D(0.404, 0, 0, 0, 3.1015108, 6.1034327, 0, -2.497474, 7.579603, 0.7353661, -2.767607, -3.7646914)
 
 [node name="InvisibleBarrier2" parent="Furniture/InvisibleBarriers" unique_id=241627580 instance=ExtResource("23_werwd")]
 transform = Transform3D(0.165, 0, 0, 0, 8.432, 0, 0, 0, 6.1903067, 16.892551, -0.101634264, -2.9396007)
@@ -300,12 +303,30 @@ transform = Transform3D(0.165, 0, 0, 0, 8.432, 0, 0, 0, 6.1903067, 16.892551, -0
 transform = Transform3D(0.165, 0, 0, 0, 8.432, 0, 0, 0, 6.2673106, 14.609984, -9.556157, -2.7719493)
 
 [node name="InvisibleBarrier4" parent="Furniture/InvisibleBarriers" unique_id=2083403726 instance=ExtResource("23_werwd")]
-transform = Transform3D(2.3324478, 0, 0, 0, 3.869014, 0, 0, 0, 6.0293593, 9.182978, -6.2892647, -8.309452)
+transform = Transform3D(3.2327726, 0, 0, 0, 3.869014, 0, 0, 0, 6.6322956, 9.182978, -6.2892647, -8.309452)
+
+[node name="InvisibleBarrier5" parent="Furniture/InvisibleBarriers" unique_id=1060090726 instance=ExtResource("23_werwd")]
+transform = Transform3D(4.9325533, 0, 0, 0, 3.5659544, 0, 0, 0, 1.6108891, 3.2322102, 0.5582781, 0.20279098)
 
 [node name="Car" type="Node3D" parent="Furniture" unique_id=638688352]
 
 [node name="Car" parent="Furniture/Car" unique_id=946640180 instance=ExtResource("24_of21v")]
 transform = Transform3D(-1.4993006e-08, 0, 0.343, 0, 0.4, 0, -0.343, 0, -1.4993006e-08, 9.118922, -7.7633452, -8.555126)
+
+[node name="SteppingStool" type="Node3D" parent="Furniture" unique_id=981240203]
+
+[node name="SteppingStool" parent="Furniture/SteppingStool" unique_id=1146295567 instance=ExtResource("25_80cyg")]
+transform = Transform3D(-3.059797e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.059797e-08, -11.8289175, -7.89944, 4.850899)
+
+[node name="Notes" type="Node3D" parent="Furniture" unique_id=645977529]
+
+[node name="Paper" parent="Furniture/Notes" unique_id=1006405956 instance=ExtResource("26_mca5t")]
+transform = Transform3D(-2.1855694e-08, -0.5, 0, 0.5, -2.1855694e-08, 0, 0, 0, 0.5, 0.48625004, 0.6464224, 0.7963262)
+
+[node name="paper" parent="Furniture/Notes/Paper/Paper" parent_id_path=PackedInt32Array(1006405956, 1242684058) index="0" unique_id=510716924]
+note_text = "Hello,
+
+My name is yoshi"
 
 [node name="Door" type="Node3D" parent="." unique_id=465373066]
 
@@ -365,3 +386,4 @@ transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-
 
 [editable path="Furniture/Drawers/DrawerOfficeKey"]
 [editable path="Furniture/Drawers/DrawerOfficeKey/drawer2/KeySpawn/key"]
+[editable path="Furniture/Notes/Paper"]

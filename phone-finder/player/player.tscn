@@ -25,9 +25,13 @@ script = ExtResource("2_rkbax")
 
 [node name="Camera3D" type="Camera3D" parent="head" unique_id=1661760569]
 
+[node name="HoldPoint" type="Marker3D" parent="head/Camera3D" unique_id=1132048304]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0, -0.6055627, -1.5291212)
+
 [node name="RayCast3D" type="RayCast3D" parent="head" unique_id=2044491488]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.023266554, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.03942406, 0)
 target_position = Vector3(0, -1.5, 0)
+collide_with_areas = true
 script = ExtResource("3_g1dw6")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="head" unique_id=440759153]

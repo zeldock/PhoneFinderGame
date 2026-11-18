@@ -1,0 +1,68 @@
+[gd_scene format=4 uid="uid://dr4bykn57cxlh"]
+
+[ext_resource type="Script" uid="uid://eqtfql0hag42" path="res://Scenery/items/steppingstool.gd" id="1_lnlbx"]
+[ext_resource type="Texture2D" uid="uid://bfjlr0jsimb01" path="res://glb_models/RealSteppingStool/SteppingStool_SteppingStool_Bake1_PBR_Diffuse.png" id="1_q76m2"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lnlbx"]
+points = PackedVector3Array(-1, -0.5, -1, 1, -0.5, -1, -1, -0.5, 1, -1, 1.5, -1, 1, -0.5, 1, -0.91, 1, -1, -1, 1.5, 1, -0.97, 1.5, -1, -0.755, 1, 1, -0.97, 1.5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d2pe5"]
+resource_name = "SteppingStool_Baked"
+cull_mode = 2
+albedo_texture = ExtResource("1_q76m2")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_a2bjo"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 4, 2),
+"format": 34896613377,
+"index_count": 102,
+"index_data": PackedByteArray("BQAMAAYABwAGAAwABAAGAAcABgAEAAMABQAGAAMADQADAAQADQAEAAcABQADAAEAAgADAA0AAwACAAEADQAHAA4AAgANAA4ADAAIAAcAAAABAAIAAgAOAAAAAQAPAAUADwABAAAADAAFABAAEAAFAA8ADAAKAAgAEAAKAAwABwAIABEAEQAIAAoABwARAA4AEAASAAoADwASABAAEQAKABIADwAJABIAAAAJAA8ACwARABIADgARAAsACwASAAkADgALAAAAAAALAAkA"),
+"lods": [0.00090854615, PackedByteArray("AAABAAIAAwACAAEAAgADAAQAAgAEAAAABQADAAEABQABAAAABgAEAAMABQAGAAMABAAGAAcABAAHAAAABgAIAAcAAAAJAAUABQAKAAYABgAKAAgABQAJAAoABwAIAAsABwALAAAACwAIAAoAAAALAAkACwAKAAkA")],
+"name": "SteppingStool_Baked",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 19,
+"vertex_data": PackedByteArray("/3//fwAAAAD//wAAAAAAAP///38AAAAA//8AAP//AAD///9///8AAAAAAAAAAAAAAAAAAP//AAD/f/9///8AAP9//////wAAAAD//wAAAAAAAP////8AAP9///8AAAAAAAD/f///AAD///9//38AAP9//3//fwAAAAD/fwAAAAAAAP9//38AAP9/////fwAAAAD///9/AAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_p8k30"]
+resource_name = "SteppingStool_Cube_147"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 4, 2),
+"attribute_data": PackedByteArray("8WwouXePHXR3jyi5bEoddGxKM/7xbDP+1kaHcMsBfCvWRnwrywGHcBjYHXQNkyi5DZMddJK1KLmStTP+GNgz/nePh3BsSnwrd498K2xKh3Az/jP+rtsz/q7bKLkz/ii5M/6HcK7bkrWu24dwM/6StRjYh3ANk3wrGNh8Kw2Th3DWRh10ywEz/ssBHXTWRjP+ywEouVAkKLnWRii5UCQz/mxKKLnLAQJOGNgouTP+rtuu267bGNgCTg2TAk4z/g2TrtsNkw=="),
+"format": 34896613399,
+"index_count": 102,
+"index_data": PackedByteArray("IAAkACIAJAAgACUAJQAhACQAJQAgACYAJQAnACEAJgAnACUAJgAjACcAAQAoAAMAKAABAAAAAAABAAIAAAAEACgAAAAFAAQABgAHAAgABwAGACkAKQAGAAkACgALAAwACwAKAA0ADQAKACoAKgAOAA0AKgAPAA4AEAARABIAEAATABEAKwAVACwAKwAUABUAFwArACwAFwAsABYALQAdAB4ALQAuAB0AHAAuAC0AHAAfAC4ALwAZADAALwAbABkAGAAvADAAGAAwABoA"),
+"lods": [0.00090854615, PackedByteArray("AAABAAIAAwABAAAAAAAEAAMAAAAFAAQABgAHAAgABwAGAAkACgALAAwACwAKAA0ACgAOAA0ACgAPAA4AEAARABIAEAATABEAFAAVABYAFwAUABYAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEA")],
+"material": SubResource("StandardMaterial3D_d2pe5"),
+"name": "SteppingStool_Baked",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 49,
+"vertex_data": PackedByteArray("/3//fwAA/////wAAAAD//////38AAP//AAAAAAAA//8AAP//AAD///9///8AAP////8AAP//VNX///9/AABU1f//AAAAAFTV////f///VNUAAAAA/////////3////////8AAP//////f/9///////9/////////AAD///////8AAAAAAABU1f//AAD//1TV//8AAAAAVNUAAAAA//9U1f///3////+//3//f////7//f/9/AAD/v////38AAP+//3///wAA/78AAP//////vwAA//8AAP+//3///////7//f/9///9U1f9///8AAFTV/3//fwAAVNX/f/////9U1QAAAAAAAP//AAD///////8AAAAA/////wAA//8AAP//AAD/f/////8AAP9//3///wAA/38AAP//AAD///9///8AAP9/AAD//////3//f1TVAAD/f/////////9//3//v/9//3//f/+//3//f/9/VNX/f////39U1f9/////f/+/AAD///9//7////9/////f////3////9/////f////3+qqlRVqqpUVaqqVFWqqlRV/3//f/9//3//f/9//3//f/9//3//f/9/VFVUVVRVVFVUVVRVVFVUVf///3////9/////f////3////9/////f////3////9/qqpUVaqqVFWqqlRVqqpUVf8//3//P/9//z//f/8//3//P/9//z//f/8//3//P/9/////f6qqVFX/f/9/////f////3+qqlRVqqpUVf///3////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_a2bjo")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bhunq"]
+
+[node name="SteppingStool" type="Node3D" unique_id=1146295567]
+
+[node name="steppingstool" type="RigidBody3D" parent="." unique_id=924509422]
+script = ExtResource("1_lnlbx")
+
+[node name="steppingstool" type="CollisionShape3D" parent="steppingstool" unique_id=967069758]
+shape = SubResource("ConvexPolygonShape3D_lnlbx")
+
+[node name="SteppingStool_Baked" type="MeshInstance3D" parent="steppingstool" unique_id=1595605308]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("ArrayMesh_p8k30")
+
+[node name="Area3D" type="Area3D" parent="steppingstool" unique_id=91910458]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="steppingstool/Area3D" unique_id=106155067]
+transform = Transform3D(2.395, 0, 0, 0, 2.395, 0, 0, 0, 2.395, 0, 0.5247187, 0)
+shape = SubResource("BoxShape3D_bhunq")

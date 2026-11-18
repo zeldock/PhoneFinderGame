@@ -4,21 +4,24 @@
 [ext_resource type="Texture2D" uid="uid://cyhweeslj1lg8" path="res://ui/crosshairunlock.png" id="2_vq5xy"]
 [ext_resource type="Shader" uid="uid://q28yjmlqrasi" path="res://shaders/pausemenushader.gdshader" id="3_ehg4m"]
 [ext_resource type="Script" uid="uid://cx3echy7u631k" path="res://ui/pause_menu.gd" id="3_iwa1g"]
+[ext_resource type="Script" uid="uid://b6ps70myu7sq1" path="res://ui/note_contents.gd" id="5_lp0io"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vq5xy"]
 shader = ExtResource("3_ehg4m")
 shader_parameter/blur_amount = 2.5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_riqys"]
+bg_color = Color(0.7877592, 0.78775924, 0.787759, 1)
+
 [node name="player_ui" type="Node2D" unique_id=1585987197]
 
 [node name="MainCrosshair" type="CanvasLayer" parent="." unique_id=73690660]
 
-[node name="crosshair" type="CenterContainer" parent="MainCrosshair" unique_id=1841157348]
-offset_left = 132.0
-offset_top = 78.0
-offset_right = 1285.0
-offset_bottom = 724.0
-scale = Vector2(0.77204853, 0.7590886)
+[node name="crosshair" type="CenterContainer" parent="MainCrosshair" unique_id=121467695]
+offset_left = 3.9999695
+offset_right = 1157.0
+offset_bottom = 646.0
+scale = Vector2(1.6682011, 1.6827868)
 
 [node name="crosshairtexture" type="TextureRect" parent="MainCrosshair/crosshair" unique_id=86521526]
 layout_mode = 2
@@ -31,7 +34,7 @@ offset_left = 132.0
 offset_top = 78.0
 offset_right = 1285.0
 offset_bottom = 724.0
-scale = Vector2(0.77204853, 0.7590886)
+scale = Vector2(1.4120477, 1.359089)
 
 [node name="crosshairtexture" type="TextureRect" parent="UnlockCrosshair/crosshairunlock" unique_id=689305842]
 layout_mode = 2
@@ -40,16 +43,17 @@ texture = ExtResource("2_vq5xy")
 [node name="TextBox" type="CanvasLayer" parent="." unique_id=726149452]
 
 [node name="container" type="CenterContainer" parent="TextBox" unique_id=1600792704]
-offset_left = 390.0
-offset_top = 505.0
-offset_right = 777.0
-offset_bottom = 545.0
+offset_left = 749.0
+offset_top = 874.0
+offset_right = 1136.0
+offset_bottom = 914.0
 
 [node name="hud" type="Label" parent="TextBox/container" unique_id=58753956]
 layout_mode = 2
 
 [node name="PauseMenu" type="CanvasLayer" parent="." unique_id=92676795]
 process_mode = 3
+layer = 10
 script = ExtResource("3_iwa1g")
 
 [node name="Control" type="Control" parent="PauseMenu" unique_id=699641475]
@@ -57,7 +61,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-scale = Vector2(28.760002, 16.2)
+scale = Vector2(48.120003, 26.840002)
 
 [node name="Blur" type="ColorRect" parent="PauseMenu/Control" unique_id=395156966]
 material = SubResource("ShaderMaterial_vq5xy")
@@ -68,9 +72,11 @@ offset_bottom = 40.0
 [node name="Control2" type="Control" parent="PauseMenu" unique_id=1473612071]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(28.840004, 16.200003)
+offset_left = 12.0
+offset_top = 4.0
+offset_right = 52.0
+offset_bottom = 44.0
+scale = Vector2(47.440006, 26.040005)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/Control2" unique_id=1817944293]
 propagate_maximum_size = false
@@ -96,3 +102,53 @@ text = "Play"
 layout_mode = 2
 text = "Quit
 "
+
+[node name="NoteContents" type="CanvasLayer" parent="." unique_id=1137400041]
+process_mode = 3
+layer = 2
+visible = false
+script = ExtResource("5_lp0io")
+
+[node name="ControlBlur" type="Control" parent="NoteContents" unique_id=2035751087]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(48.16, 26.880001)
+
+[node name="Blur" type="ColorRect" parent="NoteContents/ControlBlur" unique_id=1477077063]
+material = SubResource("ShaderMaterial_vq5xy")
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.0009205, 1.0114638)
+
+[node name="Paper" type="Panel" parent="NoteContents/ControlBlur" unique_id=80590154]
+layout_mode = 0
+offset_left = 12.520762
+offset_top = 2.3809524
+offset_right = 29.766937
+offset_bottom = 42.38095
+scale = Vector2(0.8787375, 0.86904764)
+theme_override_styles/panel = SubResource("StyleBoxFlat_riqys")
+
+[node name="Label" type="Label" parent="NoteContents/ControlBlur/Paper" unique_id=1313787152]
+custom_minimum_size = Vector2(440, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.4177713
+offset_top = 1.3270547
+offset_right = 484.1716
+offset_bottom = 611.327
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.030125212, 0.054473467)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Hello,
+
+pee pee poo poo
+"
+autowrap_mode = 2

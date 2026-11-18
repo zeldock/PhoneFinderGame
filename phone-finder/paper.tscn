@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dqprubx4gdadm"]
+
+[ext_resource type="PackedScene" uid="uid://oa8yqgc7d4q8" path="res://glb_models/Paper/Paper.glb" id="1_pugg3"]
+[ext_resource type="Script" uid="uid://uyjdf7q135sh" path="res://Scenery/items/paper.gd" id="2_dpwhn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pugg3"]
+size = Vector3(20.573414, 9.615633, 2.6117525)
+
+[node name="Paper" unique_id=1006405956 instance=ExtResource("1_pugg3")]
+
+[node name="paper" type="StaticBody3D" parent="Paper" parent_id_path=PackedInt32Array(1242684058) index="0" unique_id=510716924]
+transform = Transform3D(0.9160804, 0.4009946, 0, -0.4009946, 0.9160804, 0, 0, 0, 1, -4.7684374, 5.006562, 0.010212662)
+script = ExtResource("2_dpwhn")
+
+[node name="paper" type="CollisionShape3D" parent="Paper/paper" index="0" unique_id=786738340]
+shape = SubResource("BoxShape3D_pugg3")
