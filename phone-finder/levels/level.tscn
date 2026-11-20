@@ -117,8 +117,11 @@ transform = Transform3D(-0.4, 0, -3.4969112e-08, 0, 0.4, 0, 3.4969112e-08, 0, -0
 [node name="OutsideDrawer" parent="Furniture/Drawers" unique_id=1715299349 instance=ExtResource("6_vnv7o")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -16.312172, -0.07698727, 4.4913964)
 
-[node name="OutsideDrawer2" parent="Furniture/Drawers" unique_id=1124575195 instance=ExtResource("6_vnv7o")]
+[node name="LockedDrawer" parent="Furniture/Drawers" unique_id=1124575195 instance=ExtResource("6_vnv7o")]
 transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, -5.9874706, -0.07698727, -0.09347737)
+
+[node name="drawer" parent="Furniture/Drawers/LockedDrawer" index="0" unique_id=722439514]
+required_key_id = "drawer_key"
 
 [node name="OutsideDrawer3" parent="Furniture/Drawers" unique_id=1108538199 instance=ExtResource("6_vnv7o")]
 transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, 5.8952994, -7.4590063, -4.8624926)
@@ -129,11 +132,8 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.7560847, -7.4590063,
 [node name="DrawerOfficeKey" parent="Furniture/Drawers" unique_id=1467624419 instance=ExtResource("6_vnv7o")]
 transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, -3.3551588, -0.1154809, -3.0042534)
 
-[node name="key" parent="Furniture/Drawers/DrawerOfficeKey/drawer2/KeySpawn" parent_id_path=PackedInt32Array(1467624419, 172134177) index="0" unique_id=1854580271 instance=ExtResource("7_ukwr8")]
+[node name="key" parent="Furniture/Drawers/DrawerOfficeKey/drawer/KeySpawn" parent_id_path=PackedInt32Array(1467624419, 172134177) index="0" unique_id=1854580271 instance=ExtResource("7_ukwr8")]
 transform = Transform3D(-2.6226832e-08, 0, -0.59999996, 0, 0.59999996, 0, 0.59999996, 0, -2.6226832e-08, -0.05703926, 0.10615337, 0.7185242)
-
-[node name="Key" parent="Furniture/Drawers/DrawerOfficeKey/drawer2/KeySpawn/key" index="0" unique_id=431662831]
-transform = Transform3D(0.5814271, 0, 0, 0, 0.13785954, 0, 0, 0, 0.5814271, -0.43572426, 0, 0)
 
 [node name="Outside Drawer_Baked" parent="Furniture/Drawers/DrawerOfficeKey" index="2" unique_id=1285183227]
 transform = Transform3D(1.2394421, 0, 0, 0, 1.4783574, 0, 0, 0, 3.1164722, -0.0009942055, 0.2678883, 0.0063946247)
@@ -320,13 +320,45 @@ transform = Transform3D(-3.059797e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.059797e-08
 
 [node name="Notes" type="Node3D" parent="Furniture" unique_id=645977529]
 
-[node name="Paper" parent="Furniture/Notes" unique_id=1006405956 instance=ExtResource("26_mca5t")]
+[node name="PaperTest" parent="Furniture/Notes" unique_id=1542730389 instance=ExtResource("26_mca5t")]
 transform = Transform3D(-2.1855694e-08, -0.5, 0, 0.5, -2.1855694e-08, 0, 0, 0, 0.5, 0.48625004, 0.6464224, 0.7963262)
 
-[node name="paper" parent="Furniture/Notes/Paper/Paper" parent_id_path=PackedInt32Array(1006405956, 1242684058) index="0" unique_id=510716924]
+[node name="paper" parent="Furniture/Notes/PaperTest/Paper" parent_id_path=PackedInt32Array(1542730389, 1242684058) index="0" unique_id=510716924]
 note_text = "Hello,
 
 My name is yoshi"
+
+[node name="PaperTest2" parent="Furniture/Notes" unique_id=1006405956 instance=ExtResource("26_mca5t")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12.895428, 0.8825302, -1.5403471)
+
+[node name="paper" parent="Furniture/Notes/PaperTest2/Paper" parent_id_path=PackedInt32Array(1006405956, 1242684058) index="0" unique_id=510716924]
+note_text = "Hey,
+
+I am heading out for today, I seem to have misplaced my lighter if you find it please mail it back to me it is pretty important to me,
+
+Thanks for having me over for the weekend!
+"
+
+[node name="PaperOffice" parent="Furniture/Notes" unique_id=119981628 instance=ExtResource("26_mca5t")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12.522745, -6.510857, 9.167234)
+
+[node name="Paper" parent="Furniture/Notes/PaperOffice" index="0" unique_id=1242684058]
+transform = Transform3D(0.029384542, -0.012592884, 0.30158326, 0.02518577, 0.05876909, 0, -0.050895527, 0.021811517, 0.17411916, 0.82086945, 0.08877945, 1.7655373)
+
+[node name="paper" parent="Furniture/Notes/PaperOffice/Paper" index="0" unique_id=510716924]
+note_text = "GRUG COUNTY ELEMENTARY SCHOOL
+DISRUPTIVE CLASSROOM BEHAVIOR
+INSTRUCTOR NOTICE OF SUSPENSION LETTER
+
+Date: 11/20/2026
+
+Dear Parent/Guardian,
+
+Your child has started, a fire on the curtains in the classroom. This behavior is inappropriate in class and you are in violation of the Stanwdards of Conduct established by the Grug County Board Policy BP-5500. Specifically, it appears you have violated our contraband policy. As a consequence, your child is hereby suspended from this school for five consecutive days. A suspension does not excuse your child from completing work.
+
+Sincerely,
+
+Dr. Matthew "
 
 [node name="Door" type="Node3D" parent="." unique_id=465373066]
 
@@ -384,6 +416,8 @@ transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-
 
 [node name="Items" type="Node3D" parent="." unique_id=1340611331]
 
+[editable path="Furniture/Drawers/LockedDrawer"]
 [editable path="Furniture/Drawers/DrawerOfficeKey"]
-[editable path="Furniture/Drawers/DrawerOfficeKey/drawer2/KeySpawn/key"]
-[editable path="Furniture/Notes/Paper"]
+[editable path="Furniture/Notes/PaperTest"]
+[editable path="Furniture/Notes/PaperTest2"]
+[editable path="Furniture/Notes/PaperOffice"]

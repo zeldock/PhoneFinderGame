@@ -33,7 +33,8 @@ func _physics_process(delta: float) -> void:
 			if !crosshair.visible:
 				crosshair.visible = true
 			if Input.is_action_just_pressed("interact"):
-				hit.get_parent().get_parent().toggle_door()
+				#hit.get_parent().get_parent().toggle_door()
+				use_door(hit.get_parent().get_parent())
 		elif "key_id" in hit:
 			if !crosshair.visible:
 				crosshair.visible = true
@@ -62,7 +63,7 @@ func _physics_process(delta: float) -> void:
 			crosshair.visible = false
 
 func use_door(door):
-	if door.required_key_id == "" or door.unlocked:
+	if (door.required_key_id == "" and !has_node("drawer")) or door.unlocked or (has_node("drawer") and door.drawer.required_key_id == ""):
 		door.toggle_door()
 	elif door.required_key_id in keys:
 		door.unlocked = true

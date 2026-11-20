@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c6m4fjyhaulql"]
 
-[ext_resource type="PackedScene" uid="uid://6u76qol41ta1" path="res://glb_models/key.glb" id="1_uw62m"]
+[ext_resource type="PackedScene" uid="uid://6u76qol41ta1" path="res://glb_models/misc/key.glb" id="1_uw62m"]
 [ext_resource type="Script" uid="uid://bjf46bq81c0sr" path="res://general scripts/key.gd" id="2_gm5r4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uw62m"]
@@ -9,7 +9,7 @@ height = 4.8956585
 
 [node name="key" unique_id=1854580271 instance=ExtResource("1_uw62m")]
 
-[node name="key" type="StaticBody3D" parent="Key" parent_id_path=PackedInt32Array(1438604742) index="0" unique_id=1648574001]
+[node name="key" type="StaticBody3D" parent="Key" parent_id_path=PackedInt32Array(431662831) index="0" unique_id=1648574001]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -1.4478292, 0, 0)
 script = ExtResource("2_gm5r4")
 
