@@ -19,5 +19,11 @@ func pause():
 
 func resume():
 	visible = false
-	get_tree().paused = false
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	var note = get_parent().get_node("NoteContents")
+	var alarm = get_parent().get_node("AlarmUI")
+	if alarm.visible:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	else:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	if not note.visible and not alarm.visible:
+		get_tree().paused = false

@@ -5,6 +5,7 @@
 [ext_resource type="Shader" uid="uid://q28yjmlqrasi" path="res://shaders/pausemenushader.gdshader" id="3_ehg4m"]
 [ext_resource type="Script" uid="uid://cx3echy7u631k" path="res://ui/pause_menu.gd" id="3_iwa1g"]
 [ext_resource type="Script" uid="uid://b6ps70myu7sq1" path="res://ui/note_contents.gd" id="5_lp0io"]
+[ext_resource type="Script" uid="uid://di7st8j3dd1es" path="res://ui/alarm_ui.gd" id="6_ykvpg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vq5xy"]
 shader = ExtResource("3_ehg4m")
@@ -12,6 +13,9 @@ shader_parameter/blur_amount = 2.5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_riqys"]
 bg_color = Color(0.7877592, 0.78775924, 0.787759, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ykvpg"]
+bg_color = Color(0.48849028, 0.52186626, 0.5177924, 1)
 
 [node name="player_ui" type="Node2D" unique_id=1585987197]
 
@@ -106,7 +110,6 @@ text = "Quit
 [node name="NoteContents" type="CanvasLayer" parent="." unique_id=1137400041]
 process_mode = 3
 layer = 2
-visible = false
 script = ExtResource("5_lp0io")
 
 [node name="ControlBlur" type="Control" parent="NoteContents" unique_id=2035751087]
@@ -152,3 +155,61 @@ text = "Hello,
 pee pee poo poo
 "
 autowrap_mode = 2
+
+[node name="AlarmUI" type="CanvasLayer" parent="." unique_id=2083508386]
+process_mode = 3
+layer = 2
+script = ExtResource("6_ykvpg")
+
+[node name="ControlBlur" type="Control" parent="AlarmUI" unique_id=1840731715]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1071.4285
+offset_bottom = 1078.9999
+scale = Vector2(1.792, 1)
+
+[node name="Blur" type="ColorRect" parent="AlarmUI/ControlBlur" unique_id=1984045706]
+material = SubResource("ShaderMaterial_vq5xy")
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.0009205, 1.0114638)
+
+[node name="Paper" type="Panel" parent="AlarmUI/ControlBlur" unique_id=91778217]
+layout_mode = 0
+offset_left = 324.21875
+offset_top = 218.0
+offset_right = 789.6206
+offset_bottom = 868.0
+scale = Vector2(1, 0.989)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ykvpg")
+
+[node name="Display" type="Label" parent="AlarmUI/ControlBlur/Paper" unique_id=1046835437]
+custom_minimum_size = Vector2(440, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.5580033
+offset_top = 1.0111084
+offset_right = 14908.857
+offset_bottom = 11623.011
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.030125212, 0.054473467)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 1800
+text = "----
+
+
+
+"
+horizontal_alignment = 1
+
+[node name="Keypad" type="GridContainer" parent="AlarmUI/ControlBlur/Paper" unique_id=254998720]
+layout_mode = 1
+offset_left = 45.758934
+offset_top = 123.35693
+offset_right = 390.62503
+offset_bottom = 623.35693
+columns = 3

@@ -26,7 +26,8 @@
 [ext_resource type="PackedScene" uid="uid://hild23sspsk2" path="res://Scenery/FillerScenery/invisible_barrier.tscn" id="23_werwd"]
 [ext_resource type="PackedScene" uid="uid://bhrrrhaoqgq5t" path="res://Scenery/FillerScenery/car.tscn" id="24_of21v"]
 [ext_resource type="PackedScene" uid="uid://dr4bykn57cxlh" path="res://Scenery/items/stepping_stoolfixed.tscn" id="25_80cyg"]
-[ext_resource type="PackedScene" uid="uid://dqprubx4gdadm" path="res://paper.tscn" id="26_mca5t"]
+[ext_resource type="PackedScene" uid="uid://dqprubx4gdadm" path="res://Scenery/items/paper.tscn" id="26_mca5t"]
+[ext_resource type="PackedScene" uid="uid://bvwq0dwrx5ahf" path="res://Scenery/items/alarm.tscn" id="28_axqo2"]
 
 [sub_resource type="Gradient" id="Gradient_pb8y7"]
 offsets = PackedFloat32Array(0, 0.58299595)
@@ -323,7 +324,7 @@ transform = Transform3D(-3.059797e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.059797e-08
 [node name="PaperTest" parent="Furniture/Notes" unique_id=1542730389 instance=ExtResource("26_mca5t")]
 transform = Transform3D(-2.1855694e-08, -0.5, 0, 0.5, -2.1855694e-08, 0, 0, 0, 0.5, 0.48625004, 0.6464224, 0.7963262)
 
-[node name="paper" parent="Furniture/Notes/PaperTest/Paper" parent_id_path=PackedInt32Array(1542730389, 1242684058) index="0" unique_id=510716924]
+[node name="paper" parent="Furniture/Notes/PaperTest/Paper" parent_id_path=PackedInt32Array(1542730389, 294132486) index="0" unique_id=510716924]
 note_text = "Hello,
 
 My name is yoshi"
@@ -331,7 +332,7 @@ My name is yoshi"
 [node name="PaperTest2" parent="Furniture/Notes" unique_id=1006405956 instance=ExtResource("26_mca5t")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12.895428, 0.8825302, -1.5403471)
 
-[node name="paper" parent="Furniture/Notes/PaperTest2/Paper" parent_id_path=PackedInt32Array(1006405956, 1242684058) index="0" unique_id=510716924]
+[node name="paper" parent="Furniture/Notes/PaperTest2/Paper" parent_id_path=PackedInt32Array(1006405956, 294132486) index="0" unique_id=510716924]
 note_text = "Hey,
 
 I am heading out for today, I seem to have misplaced my lighter if you find it please mail it back to me it is pretty important to me,
@@ -342,7 +343,7 @@ Thanks for having me over for the weekend!
 [node name="PaperOffice" parent="Furniture/Notes" unique_id=119981628 instance=ExtResource("26_mca5t")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12.522745, -6.510857, 9.167234)
 
-[node name="Paper" parent="Furniture/Notes/PaperOffice" index="0" unique_id=1242684058]
+[node name="Paper" parent="Furniture/Notes/PaperOffice" index="0" unique_id=294132486]
 transform = Transform3D(0.029384542, -0.012592884, 0.30158326, 0.02518577, 0.05876909, 0, -0.050895527, 0.021811517, 0.17411916, 0.82086945, 0.08877945, 1.7655373)
 
 [node name="paper" parent="Furniture/Notes/PaperOffice/Paper" index="0" unique_id=510716924]
@@ -360,6 +361,17 @@ Sincerely,
 
 Dr. Matthew "
 
+[node name="PaperFridgeCode" parent="Furniture/Notes" unique_id=1095241884 instance=ExtResource("26_mca5t")]
+transform = Transform3D(2.1855694e-08, 0.5, -4.371139e-08, 0.5, -2.1855694e-08, 0, -1.9106855e-15, -4.371139e-08, -0.5, -14.526226, -3.7361958, 6.5012627)
+
+[node name="paper" parent="Furniture/Notes/PaperFridgeCode/Paper" parent_id_path=PackedInt32Array(1095241884, 294132486) index="0" unique_id=510716924 node_paths=PackedStringArray("alarm_panel")]
+note_text = "Hey,
+
+The alarm company changed the code again. Don't forget it this time.
+
+{code}"
+alarm_panel = NodePath("../../../../../Items/alarm/Cube_002/alarm")
+
 [node name="Door" type="Node3D" parent="." unique_id=465373066]
 
 [node name="door" parent="Door" unique_id=1602222744 instance=ExtResource("9_rtcij")]
@@ -371,8 +383,10 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 7.987915, 1.5531945, 0.
 [node name="door9" parent="Door" unique_id=728622804 instance=ExtResource("9_rtcij")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.4293303, -5.8157353, 0.6249517)
 
-[node name="door10" parent="Door" unique_id=1570270079 instance=ExtResource("9_rtcij")]
+[node name="alarmdoor" parent="Door" unique_id=1570270079 instance=ExtResource("9_rtcij")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.835942, -5.8157353, 0.7182826)
+locked_message = "The alarm is on, I shouldn't."
+required_key_id = "alarm"
 
 [node name="door11" parent="Door" unique_id=1305392754 instance=ExtResource("9_rtcij")]
 transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, 15.488694, -5.8157353, 0.504895)
@@ -416,8 +430,13 @@ transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-
 
 [node name="Items" type="Node3D" parent="." unique_id=1340611331]
 
+[node name="alarm" parent="Items" unique_id=243301689 instance=ExtResource("28_axqo2")]
+transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, -0.46250868, -5.4982886, -13.44792)
+
 [editable path="Furniture/Drawers/LockedDrawer"]
 [editable path="Furniture/Drawers/DrawerOfficeKey"]
 [editable path="Furniture/Notes/PaperTest"]
 [editable path="Furniture/Notes/PaperTest2"]
 [editable path="Furniture/Notes/PaperOffice"]
+[editable path="Furniture/Notes/PaperFridgeCode"]
+[editable path="Items/alarm"]

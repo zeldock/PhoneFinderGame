@@ -1,5 +1,5 @@
 extends Node3D
-
+@export var locked_message := "It's locked."
 @export var required_key_id := ""
 var unlocked := false
 var opened = false

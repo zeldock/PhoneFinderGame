@@ -1,13 +1,15 @@
 [gd_scene format=3 uid="uid://bvwq0dwrx5ahf"]
 
 [ext_resource type="PackedScene" uid="uid://2y51la5f6182" path="res://glb_models/alarm/alarm.glb" id="1_cx3q0"]
+[ext_resource type="Script" uid="uid://ol7uw3wluhbf" path="res://Scenery/items/alarmscript.gd" id="2_ksyjc"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ksyjc"]
 points = PackedVector3Array(-0.99852663, -1, -1, 1, 0.9970579, 0.9970579, 1, -0.98049927, 0.9970579, 1.2077842, 0.16469903, -0.80855685, -0.9805647, 1, 1, -0.9805647, 1, -0.98344135, -0.9805647, -0.98344135, 1, 1, -0.98049927, -0.98049927, 1, 0.9970579, -0.98049927, 1.16474, 0.8271, 0.7601196, 1.1055, -0.88418674, 0.8334408, 1.2077842, 0.16469903, 0.79037786, 1.16474, 0.8271, -0.77695465, 1.0979306, -0.8775002, -0.8441)
 
 [node name="alarm" unique_id=243301689 instance=ExtResource("1_cx3q0")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Cube_002" parent_id_path=PackedInt32Array(523231707) index="0" unique_id=1624772622]
+[node name="alarm" type="StaticBody3D" parent="Cube_002" parent_id_path=PackedInt32Array(625709116) index="0" unique_id=1624772622]
+script = ExtResource("2_ksyjc")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_002/StaticBody3D" index="0" unique_id=1581076762]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_002/alarm" index="0" unique_id=1581076762]
 shape = SubResource("ConvexPolygonShape3D_ksyjc")

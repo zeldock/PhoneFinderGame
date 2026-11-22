@@ -6,6 +6,7 @@ extends RayCast3D
 @onready var text_box = ui.get_node("TextBox/container/hud")
 @onready var hold_point = get_viewport().get_camera_3d().get_node("HoldPoint")
 @onready var note_ui = ui.get_node("NoteContents")
+@onready var alarm_ui = ui.get_node("AlarmUI")
 
 var keys = []
 var flashing := false
@@ -46,7 +47,15 @@ func _physics_process(delta: float) -> void:
 			if !crosshair.visible:
 				crosshair.visible = true
 			if Input.is_action_just_pressed("interact"):
-				note_ui.show_note(hit.note_text)
+				note_ui.show_note(hit.get_text())
+		elif "alarm_code" in hit:
+			if !crosshair.visible:
+				crosshair.visible = true
+			if Input.is_action_just_pressed("interact"):
+				if hit.unlocks_key_id in keys:
+					show_text("Alarm already disarmed.")
+				else:
+					alarm_ui.open(hit.alarm_code, func(): keys.append(hit.unlocks_key_id))
 		elif (hit.has_method("pick_up") or hit.get_parent().has_method("pick_up")) and held_item == null:
 			if !crosshair.visible:
 				crosshair.visible = true
@@ -75,7 +84,7 @@ func use_door(door):
 		unlock_crosshair.visible = false
 		flashing = false
 	else:
-		show_text("It's locked.")
+		show_text(door.locked_message)
 
 func show_text(msg):
 	text_box.text = msg
