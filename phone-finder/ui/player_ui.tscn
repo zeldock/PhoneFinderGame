@@ -171,8 +171,8 @@ scale = Vector2(1.792, 1)
 [node name="Blur" type="ColorRect" parent="AlarmUI/ControlBlur" unique_id=1984045706]
 material = SubResource("ShaderMaterial_vq5xy")
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1069.8856
+offset_bottom = 1073.6915
 scale = Vector2(1.0009205, 1.0114638)
 
 [node name="Paper" type="Panel" parent="AlarmUI/ControlBlur" unique_id=91778217]
