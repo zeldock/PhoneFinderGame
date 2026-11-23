@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://chq6po12hacbd" path="res://Scenery/bedroom_drawer.tscn" id="5_gjl0y"]
 [ext_resource type="PackedScene" uid="uid://q5a0q85w01xj" path="res://Scenery/outside_drawer.tscn" id="6_vnv7o"]
 [ext_resource type="PackedScene" uid="uid://bsb11osep1l8a" path="res://Scenery/parent_bed.tscn" id="7_d5x7l"]
+[ext_resource type="PackedScene" uid="uid://cghhgjp6bf7lj" path="res://Scenery/items/phone.tscn" id="7_e5w8k"]
 [ext_resource type="PackedScene" uid="uid://c6m4fjyhaulql" path="res://Scenery/items/key.tscn" id="7_ukwr8"]
 [ext_resource type="Texture2D" uid="uid://dpiguko4je1lj" path="res://glb_models/Outside Drawer/OutsideDrawer_Outside Drawer_Bake1_PBR_Diffuse.png" id="8_qucvi"]
 [ext_resource type="PackedScene" uid="uid://7bq5j144tyig" path="res://Scenery/regular_bed.tscn" id="8_rtcij"]
@@ -38,6 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://su8w8xlk553b" path="res://glb_models/misc/RailRail.glb" id="32_ddeq6"]
 [ext_resource type="PackedScene" uid="uid://d0f0fpmcfj8tg" path="res://glb_models/misc/Bathsink.glb" id="33_t4k87"]
 [ext_resource type="PackedScene" uid="uid://4ob1a57wu5gw" path="res://Scenery/FillerScenery/laundry_machine.tscn" id="34_ia6v6"]
+[ext_resource type="PackedScene" uid="uid://dwx3rfm33dbb5" path="res://Scenery/items/phone_booth.tscn" id="37_spdwc"]
 
 [sub_resource type="Gradient" id="Gradient_pb8y7"]
 offsets = PackedFloat32Array(0, 0.58299595)
@@ -63,7 +65,7 @@ sky_material = SubResource("ProceduralSkyMaterial_hjsbj")
 [sub_resource type="Environment" id="Environment_5mrsh"]
 background_mode = 2
 sky = SubResource("Sky_cwqvt")
-ambient_light_sky_contribution = 0.36
+ambient_light_sky_contribution = 0.35
 ambient_light_energy = 1.15
 glow_enabled = true
 
@@ -171,7 +173,11 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -16.312172, -0.07698727
 transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, -5.9874706, -0.07698727, -0.09347737)
 
 [node name="drawer" parent="Furniture/Drawers/LockedDrawer" index="0" unique_id=722439514]
+locked_message = "It's locked. Maybe I don't need my phone."
 required_key_id = "drawer_key"
+
+[node name="Phone" parent="Furniture/Drawers/LockedDrawer/drawer/KeySpawn" parent_id_path=PackedInt32Array(1124575195, 172134177) index="0" unique_id=1225050348 instance=ExtResource("7_e5w8k")]
+transform = Transform3D(-1.8105851e-08, 0.70710677, 0.70710677, 6.181724e-08, 0.70710677, -0.70710677, -1, 3.090862e-08, -5.6514157e-08, -0.09404659, 0, 0)
 
 [node name="OutsideDrawer3" parent="Furniture/Drawers" unique_id=1108538199 instance=ExtResource("6_vnv7o")]
 transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, 5.8952994, -7.4590063, -4.8624926)
@@ -198,8 +204,8 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -16.355278, -15.09362, 
 [node name="key" parent="Furniture/Drawers/DrawerBasementKey/drawer/KeySpawn" parent_id_path=PackedInt32Array(1954158552, 172134177) index="0" unique_id=729919088 instance=ExtResource("7_ukwr8")]
 transform = Transform3D(-2.6226832e-08, 0, -0.59999996, 0, 0.59999996, 0, 0.59999996, 0, -2.6226832e-08, -0.05703926, 0.10615337, 0.7185242)
 
-[node name="key" parent="Furniture/Drawers/DrawerBasementKey/drawer/KeySpawn/key/Key" parent_id_path=PackedInt32Array(729919088, 2073460959) index="0" unique_id=1648574001]
-key_id = "drawerkey"
+[node name="key" parent="Furniture/Drawers/DrawerBasementKey/drawer/KeySpawn/key/Key" parent_id_path=PackedInt32Array(729919088, 431662831) index="0" unique_id=1648574001]
+key_id = "drawer_key"
 display_name = "Drawer Key"
 
 [node name="Outside Drawer_Baked" parent="Furniture/Drawers/DrawerBasementKey" index="2" unique_id=1285183227]
@@ -398,7 +404,7 @@ transform = Transform3D(0.4949747, 0, 0.49497488, 0, 0.7000001, 0, -0.49497488, 
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -9.07968, -4.3952456, -4.101987)
 visible = false
 
-[node name="paper" parent="Furniture/Notes/PaperTest/Paper" parent_id_path=PackedInt32Array(1542730389, 294132486) index="0" unique_id=510716924]
+[node name="paper" parent="Furniture/Notes/PaperTest/Paper" parent_id_path=PackedInt32Array(1542730389, 1242684058) index="0" unique_id=510716924]
 note_text = "Hello,
 
 My name is yoshi"
@@ -406,7 +412,7 @@ My name is yoshi"
 [node name="PaperTest2" parent="Furniture/Notes" unique_id=1006405956 instance=ExtResource("26_mca5t")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12.895428, 0.8825302, -1.5403471)
 
-[node name="paper" parent="Furniture/Notes/PaperTest2/Paper" parent_id_path=PackedInt32Array(1006405956, 294132486) index="0" unique_id=510716924]
+[node name="paper" parent="Furniture/Notes/PaperTest2/Paper" parent_id_path=PackedInt32Array(1006405956, 1242684058) index="0" unique_id=510716924]
 note_text = "Hey,
 
 I am heading out for today, I seem to have misplaced my lighter if you find it please mail it back to me it is pretty important to me,
@@ -417,7 +423,7 @@ Thanks for having me over for the weekend!
 [node name="PaperOffice" parent="Furniture/Notes" unique_id=119981628 instance=ExtResource("26_mca5t")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12.522745, -6.510857, 9.167234)
 
-[node name="Paper" parent="Furniture/Notes/PaperOffice" index="0" unique_id=294132486]
+[node name="Paper" parent="Furniture/Notes/PaperOffice" index="0" unique_id=1242684058]
 transform = Transform3D(0.029384542, -0.012592884, 0.30158326, 0.02518577, 0.05876909, 0, -0.050895527, 0.021811517, 0.17411916, 0.82086945, 0.08877945, 1.7655373)
 
 [node name="paper" parent="Furniture/Notes/PaperOffice/Paper" index="0" unique_id=510716924]
@@ -438,7 +444,7 @@ Dr. Matthew "
 [node name="PaperFridgeCode" parent="Furniture/Notes" unique_id=1095241884 instance=ExtResource("26_mca5t")]
 transform = Transform3D(2.1855694e-08, 0.5, -4.371139e-08, 0.5, -2.1855694e-08, 0, -1.9106855e-15, -4.371139e-08, -0.5, -14.526226, -3.7361958, 6.5012627)
 
-[node name="paper" parent="Furniture/Notes/PaperFridgeCode/Paper" parent_id_path=PackedInt32Array(1095241884, 294132486) index="0" unique_id=510716924 node_paths=PackedStringArray("alarm_panel")]
+[node name="paper" parent="Furniture/Notes/PaperFridgeCode/Paper" parent_id_path=PackedInt32Array(1095241884, 1242684058) index="0" unique_id=510716924 node_paths=PackedStringArray("alarm_panel")]
 note_text = "Hey,
 
 The alarm company changed the code again. Don't forget it this time.
@@ -615,6 +621,9 @@ transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-
 [node name="LaundryMachine2" parent="Furniture/LaundryRoom" unique_id=2001205067 instance=ExtResource("34_ia6v6")]
 transform = Transform3D(0.24999999, 0, 0.4330127, 0, 0.5, 0, -0.4330127, 0, 0.24999999, -14.785587, 0.44919264, 12.685381)
 
+[node name="PhoneBooth2" parent="Furniture" unique_id=1267813726 instance=ExtResource("37_spdwc")]
+transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, -42.35752, -15.007889, 0)
+
 [node name="Door" type="Node3D" parent="." unique_id=465373066]
 
 [node name="door" parent="Door" unique_id=1602222744 instance=ExtResource("9_rtcij")]
@@ -686,7 +695,10 @@ transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-
 [node name="key" parent="Items" unique_id=351689909 instance=ExtResource("7_ukwr8")]
 transform = Transform3D(-0.14999999, 0, -0.25980762, 0, 0.29999998, 0, 0.25980762, 0, -0.14999999, 11.217381, -5.0300174, -0.5721698)
 
-[node name="key" parent="Items/key/Key" parent_id_path=PackedInt32Array(351689909, 2073460959) index="0" unique_id=1648574001]
+[node name="Key" parent="Items/key" index="0" unique_id=431662831]
+transform = Transform3D(0.5616156, -0.035680715, 7.872465e-09, -1.0244547e-07, -1.2417633e-08, -0.581427, 0.15048434, 0.13316211, 3.847078e-08, -0.6306133, 0.28806686, -0.18794441)
+
+[node name="key" parent="Items/key/Key" index="0" unique_id=1648574001]
 key_id = "basement_door"
 display_name = "Basement Key"
 
