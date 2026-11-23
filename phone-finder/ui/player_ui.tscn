@@ -107,6 +107,28 @@ layout_mode = 2
 text = "Quit
 "
 
+[node name="Label" type="Label" parent="PauseMenu/Control2" unique_id=1047476600]
+custom_minimum_size = Vector2(440, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.879425
+offset_top = 1.8817201
+offset_right = 793.6526
+offset_bottom = 595.6546
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.030125212, 0.054473467)
+theme_override_colors/font_color = Color(0.9794051, 0.979405, 0.979405, 1)
+theme_override_font_sizes/font_size = 64
+text = "E - Interact
+WASD - Move
+
+Goal: Your phone has been taken away, find your phone.
+"
+autowrap_mode = 2
+
 [node name="NoteContents" type="CanvasLayer" parent="." unique_id=1137400041]
 process_mode = 3
 layer = 2
@@ -153,6 +175,25 @@ theme_override_font_sizes/font_size = 16
 text = "Hello,
 
 pee pee poo poo
+"
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="NoteContents/ControlBlur" unique_id=2140303119]
+custom_minimum_size = Vector2(440, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.85548
+offset_top = 32.44047
+offset_right = 430.85547
+offset_bottom = 171.44048
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.030125212, 0.054473467)
+theme_override_colors/font_color = Color(0.9794051, 0.979405, 0.979405, 1)
+theme_override_font_sizes/font_size = 64
+text = "E - Esc
 "
 autowrap_mode = 2
 
@@ -213,3 +254,22 @@ offset_top = 123.35693
 offset_right = 390.62503
 offset_bottom = 623.35693
 columns = 3
+
+[node name="Label" type="Label" parent="AlarmUI/ControlBlur" unique_id=503555017]
+custom_minimum_size = Vector2(440, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 881.13837
+offset_top = 895.0
+offset_right = 5157.6826
+offset_bottom = 4723.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.030125212, 0.054473467)
+theme_override_colors/font_color = Color(0.9794051, 0.979405, 0.979405, 1)
+theme_override_font_sizes/font_size = 1800
+text = "E - Esc
+"
+autowrap_mode = 2
