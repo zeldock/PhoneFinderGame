@@ -6,11 +6,13 @@ extends RayCast3D
 @onready var text_box = ui.get_node("TextBox/container/hud")
 @onready var hold_point = get_viewport().get_camera_3d().get_node("HoldPoint")
 @onready var note_ui = ui.get_node("NoteContents")
+@onready var end_ui = ui.get_node("EndMenu")
 @onready var alarm_ui = ui.get_node("AlarmUI")
 
 var keys = []
 var flashing := false
 var held_item = null
+var endingActivated = false
 
 func _ready():
 	unlock_crosshair.visible = false
@@ -41,6 +43,7 @@ func _physics_process(delta: float) -> void:
 				crosshair.visible = true
 			if Input.is_action_just_pressed("interact"):
 				keys.append(hit.key_id)
+				$PickupSound.play()
 				show_text("Picked up: " + hit.display_name)
 				hit.get_parent().get_parent().queue_free()
 		elif "note_text" in hit:
@@ -48,6 +51,12 @@ func _physics_process(delta: float) -> void:
 				crosshair.visible = true
 			if Input.is_action_just_pressed("interact"):
 				note_ui.show_note(hit.get_text())
+				$NoteSound.play()
+		elif "end_text" in hit and endingActivated:
+			if !crosshair.visible:
+				crosshair.visible = true
+			if Input.is_action_just_pressed("interact"):
+				end_ui.endgame(hit.get_text())
 		elif "alarm_code" in hit:
 			if !crosshair.visible:
 				crosshair.visible = true
@@ -76,6 +85,7 @@ func use_door(door):
 		door.toggle_door()
 	elif door.required_key_id in keys:
 		door.unlocked = true
+		if door.has_node("UnlockSound"): door.get_node("UnlockSound").play()
 		door.toggle_door()
 		flashing = true
 		crosshair.visible = false
@@ -84,6 +94,7 @@ func use_door(door):
 		unlock_crosshair.visible = false
 		flashing = false
 	else:
+		if door.has_node("LockedSound"): door.get_node("LockedSound").play()
 		show_text(door.locked_message)
 
 func show_text(msg):

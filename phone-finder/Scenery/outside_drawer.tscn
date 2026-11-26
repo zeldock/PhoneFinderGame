@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bkyl64kch4ny1" path="res://glb_models/Outside Drawer/OutsideDrawer_nobcenter_Bake1_PBR_Diffuse.png" id="3_gvmm8"]
 [ext_resource type="Texture2D" uid="uid://dpiguko4je1lj" path="res://glb_models/Outside Drawer/OutsideDrawer_Outside Drawer_Bake1_PBR_Diffuse.png" id="4_m83dp"]
 [ext_resource type="Texture2D" uid="uid://cq1mv6b8ee6yu" path="res://glb_models/Outside Drawer/OutsideDrawer_RightFoot.png" id="5_f50u7"]
+[ext_resource type="AudioStream" uid="uid://bq62168oxxaj7" path="res://sounds/interactions/locked.wav" id="5_m83dp"]
+[ext_resource type="AudioStream" uid="uid://co7heetk5amiw" path="res://sounds/interactions/drawer.wav" id="7_gvmm8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lgkc4"]
 resource_name = "CenterDrawer_Baked"
@@ -252,6 +254,9 @@ size = Vector3(2.4501343, 3.4014282, 6.44812)
 [node name="drawer" type="Node3D" parent="." unique_id=722439514]
 script = ExtResource("1_yjusy")
 
+[node name="DoorSound" type="AudioStreamPlayer3D" parent="drawer" unique_id=1489929680]
+stream = ExtResource("7_gvmm8")
+
 [node name="CenterDrawer_Baked" type="MeshInstance3D" parent="drawer" unique_id=286181195]
 transform = Transform3D(0.94479257, 0, 0, 0, 0.5174251, 0, 0, 0, 1.2465888, 0.29368988, 0.8026726, 0.007917475)
 mesh = SubResource("ArrayMesh_jk5jh")
@@ -270,6 +275,9 @@ libraries/ = SubResource("AnimationLibrary_gvmm8")
 
 [node name="KeySpawn" type="Marker3D" parent="drawer" unique_id=172134177]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.819803, 0)
+
+[node name="LockedSound" type="AudioStreamPlayer3D" parent="drawer" unique_id=222201909]
+stream = ExtResource("5_m83dp")
 
 [node name="LeftFoot_001_Baked" type="MeshInstance3D" parent="." unique_id=368944342]
 transform = Transform3D(1, 0, 0, 0, 0.36250693, 0, 0, 0, -0.30722833, 0, -1.2118385, 2.5473983)

@@ -32,16 +32,19 @@ func close():
 	get_tree().paused = false
 
 func press(key):
+	$BeepSound.play()
 	if key == "Clear":
 		typed = ""
 	elif key == "Enter":
 		if typed == correct_code:
 			display.text = "OK"
+			$CorrectSound.play()
 			on_success.call()
 			await get_tree().create_timer(0.8).timeout
 			close()
 			return
 		display.text = "WRONG"
+		$WrongSound.play()
 		typed = ""
 		await get_tree().create_timer(0.8).timeout
 	elif typed.length() < correct_code.length():

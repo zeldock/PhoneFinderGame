@@ -8,6 +8,7 @@ points = PackedVector3Array(-0.35532498, -0.76505053, -1, -0.52231795, -0.765050
 [node name="RailRail" unique_id=1573187490 instance=ExtResource("1_5nwbv")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RailRail_Baked" parent_id_path=PackedInt32Array(1606728559) index="0" unique_id=1756279627]
+collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RailRail_Baked/StaticBody3D" index="0" unique_id=616447552]
 shape = SubResource("ConvexPolygonShape3D_aft4d")

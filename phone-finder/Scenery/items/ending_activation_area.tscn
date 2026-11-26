@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://clnoh77b7maic"]
+
+[ext_resource type="Script" uid="uid://djnavvree3yqq" path="res://Scenery/items/area_3d.gd" id="1_v1j1u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+
+[node name="ending_activation_area" type="Node3D" unique_id=943756927]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=312705523]
+script = ExtResource("1_v1j1u")
+
+[node name="end_activation" type="CollisionShape3D" parent="Area3D" unique_id=521613495]
+shape = SubResource("BoxShape3D_g4v7s")

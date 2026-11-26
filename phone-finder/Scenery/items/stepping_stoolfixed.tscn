@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://eqtfql0hag42" path="res://Scenery/items/steppingstool.gd" id="1_lnlbx"]
 [ext_resource type="Texture2D" uid="uid://bfjlr0jsimb01" path="res://glb_models/RealSteppingStool/SteppingStool_SteppingStool_Bake1_PBR_Diffuse.png" id="1_q76m2"]
+[ext_resource type="AudioStream" uid="uid://bomb4mbslw3q3" path="res://sounds/interactions/stool.wav" id="3_34dgf"]
+[ext_resource type="AudioStream" uid="uid://drxy8oprtiomm" path="res://sounds/playerandUI/footstep.wav" id="4_l36na"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lnlbx"]
 points = PackedVector3Array(-1, -0.5, -1, 1, -0.5, -1, -1, -0.5, 1, -1, 1.5, -1, 1, -0.5, 1, -0.91, 1, -1, -1, 1.5, 1, -0.97, 1.5, -1, -0.755, 1, 1, -0.97, 1.5, 1)
@@ -52,6 +54,7 @@ shadow_mesh = SubResource("ArrayMesh_a2bjo")
 [node name="SteppingStool" type="Node3D" unique_id=1146295567]
 
 [node name="steppingstool" type="RigidBody3D" parent="." unique_id=924509422]
+collision_layer = 2
 script = ExtResource("1_lnlbx")
 
 [node name="steppingstool" type="CollisionShape3D" parent="steppingstool" unique_id=967069758]
@@ -66,3 +69,9 @@ mesh = SubResource("ArrayMesh_p8k30")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="steppingstool/Area3D" unique_id=106155067]
 transform = Transform3D(2.395, 0, 0, 0, 2.395, 0, 0, 0, 2.395, 0, 0.5247187, 0)
 shape = SubResource("BoxShape3D_bhunq")
+
+[node name="PickupSound" type="AudioStreamPlayer3D" parent="steppingstool" unique_id=1746520151]
+stream = ExtResource("3_34dgf")
+
+[node name="DropSound" type="AudioStreamPlayer3D" parent="steppingstool" unique_id=583249321]
+stream = ExtResource("4_l36na")

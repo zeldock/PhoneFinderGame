@@ -14,12 +14,16 @@ func _ready():
 		if child is CollisionShape3D:
 			body_shape = child
 	meshes = find_children("*", "MeshInstance3D", true, false)
+	contact_monitor = true
+	max_contacts_reported = 1
+	body_entered.connect(_on_landed)
 
 func pick_up(point, who) -> bool:
 	for i in who.get_slide_collision_count():
 		if who.get_slide_collision(i).get_collider() == self:
 			return false
 	held = true
+	$PickupSound.play()
 	hold_point = point
 	player = who
 	freeze = true
@@ -49,6 +53,10 @@ func drop():
 	freeze = false
 	sleeping = false
 	remove_collision_exception_with(player)
+
+func _on_landed(_body):
+	if not held and not freeze:
+		$DropSound.play()
 
 func _physics_process(delta):
 	if held:

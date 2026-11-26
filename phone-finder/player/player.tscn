@@ -3,13 +3,17 @@
 [ext_resource type="Script" uid="uid://oqqcmv4sl3p1" path="res://player/player.gd" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://b7xjml60ra0c2" path="res://player/fp_cam.gd" id="2_rkbax"]
 [ext_resource type="Script" uid="uid://dha645kbd84mk" path="res://player/playerinteract.gd" id="3_g1dw6"]
+[ext_resource type="AudioStream" uid="uid://28wkuek7y1x5" path="res://sounds/interactions/key.wav" id="4_qjkh3"]
 [ext_resource type="PackedScene" uid="uid://b3b5d0826bmmc" path="res://ui/player_ui.tscn" id="4_yw30f"]
+[ext_resource type="AudioStream" uid="uid://dc3yfowa41yvr" path="res://sounds/interactions/papernote.wav" id="5_g6k8r"]
+[ext_resource type="AudioStream" uid="uid://drxy8oprtiomm" path="res://sounds/playerandUI/footstep.wav" id="7_boad6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bhunq"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_bhunq"]
 
-[node name="player" type="CharacterBody3D" unique_id=981444197]
+[node name="player" type="CharacterBody3D" unique_id=981444197 groups=["player"]]
+collision_mask = 3
 floor_max_angle = 1.1466813
 script = ExtResource("1_oul6g")
 
@@ -31,8 +35,18 @@ transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0, -
 [node name="RayCast3D" type="RayCast3D" parent="head" unique_id=2044491488]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.03942406, 0)
 target_position = Vector3(0, -1.5, 0)
+collision_mask = 3
 collide_with_areas = true
 script = ExtResource("3_g1dw6")
+
+[node name="PickupSound" type="AudioStreamPlayer3D" parent="head/RayCast3D" unique_id=211913598]
+stream = ExtResource("4_qjkh3")
+volume_db = -36.154
+max_db = -10.125
+
+[node name="NoteSound" type="AudioStreamPlayer3D" parent="head/RayCast3D" unique_id=879283222]
+process_mode = 3
+stream = ExtResource("5_g6k8r")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="head" unique_id=440759153]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.6547425)
@@ -42,3 +56,7 @@ spot_range = 7.0048656
 spot_angle = 28.382854
 
 [node name="player_ui" parent="." unique_id=1585987197 instance=ExtResource("4_yw30f")]
+
+[node name="Footsteps" type="AudioStreamPlayer" parent="." unique_id=164763900]
+stream = ExtResource("7_boad6")
+volume_db = -25.0

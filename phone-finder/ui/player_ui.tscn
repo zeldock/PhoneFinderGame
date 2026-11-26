@@ -4,8 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://cyhweeslj1lg8" path="res://ui/crosshairunlock.png" id="2_vq5xy"]
 [ext_resource type="Shader" uid="uid://q28yjmlqrasi" path="res://shaders/pausemenushader.gdshader" id="3_ehg4m"]
 [ext_resource type="Script" uid="uid://cx3echy7u631k" path="res://ui/pause_menu.gd" id="3_iwa1g"]
+[ext_resource type="Script" uid="uid://6juaacdx1ycb" path="res://ui/end_menu.gd" id="5_hff70"]
 [ext_resource type="Script" uid="uid://b6ps70myu7sq1" path="res://ui/note_contents.gd" id="5_lp0io"]
+[ext_resource type="AudioStream" uid="uid://02jduuruqqwc" path="res://sounds/playerandUI/ending.wav" id="6_fynll"]
 [ext_resource type="Script" uid="uid://di7st8j3dd1es" path="res://ui/alarm_ui.gd" id="6_ykvpg"]
+[ext_resource type="AudioStream" uid="uid://c58hq8u8lgosw" path="res://sounds/enemy/caught.wav" id="7_obao7"]
+[ext_resource type="AudioStream" uid="uid://bfghfd51ukjdf" path="res://sounds/playerandUI/buttonclick.mp3" id="8_b6i2q"]
+[ext_resource type="AudioStream" uid="uid://bo11fb0fgxgw6" path="res://sounds/alarmpanel/incorrect.mp3" id="9_1wie7"]
+[ext_resource type="AudioStream" uid="uid://6ceo7lfckoqs" path="res://sounds/alarmpanel/correct.wav" id="10_fynll"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vq5xy"]
 shader = ExtResource("3_ehg4m")
@@ -85,22 +91,23 @@ scale = Vector2(47.440006, 26.040005)
 [node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/Control2" unique_id=1817944293]
 propagate_maximum_size = false
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -39.029125
-offset_top = -25.679014
-offset_right = 2.9708748
-offset_bottom = 40.320984
-grow_horizontal = 0
+offset_top = -28.32566
+offset_right = 65.0
+offset_bottom = 72.67434
 grow_vertical = 0
 scale = Vector2(0.18654647, 0.18654647)
 
 [node name="PlayButton" type="Button" parent="PauseMenu/Control2/VBoxContainer" unique_id=304657599]
 layout_mode = 2
 text = "Play"
+
+[node name="Restart" type="Button" parent="PauseMenu/Control2/VBoxContainer" unique_id=1345888543]
+layout_mode = 2
+text = "Restart
+"
 
 [node name="Quit" type="Button" parent="PauseMenu/Control2/VBoxContainer" unique_id=1059029181]
 layout_mode = 2
@@ -128,6 +135,89 @@ WASD - Move
 Goal: Your phone has been taken away, find your phone.
 "
 autowrap_mode = 2
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="PauseMenu" unique_id=956037945]
+stream = ExtResource("8_b6i2q")
+volume_db = -15.0
+
+[node name="EndMenu" type="CanvasLayer" parent="." unique_id=1347339797]
+process_mode = 3
+layer = 10
+script = ExtResource("5_hff70")
+
+[node name="Control" type="Control" parent="EndMenu" unique_id=1736775935]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(48.120003, 26.840002)
+
+[node name="Blur" type="ColorRect" parent="EndMenu/Control" unique_id=649360081]
+material = SubResource("ShaderMaterial_vq5xy")
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Control2" type="Control" parent="EndMenu" unique_id=1505427134]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 12.0
+offset_top = 4.0
+offset_right = 52.0
+offset_bottom = 44.0
+scale = Vector2(47.440006, 26.040005)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EndMenu/Control2" unique_id=1563952702]
+propagate_maximum_size = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -25.48388
+offset_right = 65.0
+offset_bottom = 40.51612
+grow_vertical = 0
+scale = Vector2(0.18654647, 0.18654647)
+
+[node name="Quit" type="Button" parent="EndMenu/Control2/VBoxContainer" unique_id=1808189132]
+layout_mode = 2
+text = "Quit
+"
+
+[node name="Restart" type="Button" parent="EndMenu/Control2/VBoxContainer" unique_id=1434699329]
+layout_mode = 2
+text = "Restart
+"
+
+[node name="Label" type="Label" parent="EndMenu/Control2" unique_id=1663418032]
+custom_minimum_size = Vector2(440, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.879425
+offset_top = 1.8817201
+offset_right = 793.6526
+offset_bottom = 595.6546
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.030125212, 0.054473467)
+theme_override_colors/font_color = Color(0.9794051, 0.979405, 0.979405, 1)
+theme_override_font_sizes/font_size = 64
+text = "You Win
+
+..."
+autowrap_mode = 2
+
+[node name="WinSound" type="AudioStreamPlayer" parent="EndMenu" unique_id=338530597]
+stream = ExtResource("6_fynll")
+
+[node name="LoseSound" type="AudioStreamPlayer" parent="EndMenu" unique_id=149608026]
+stream = ExtResource("7_obao7")
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="EndMenu" unique_id=2055266023]
+stream = ExtResource("8_b6i2q")
+volume_db = -15.0
 
 [node name="NoteContents" type="CanvasLayer" parent="." unique_id=1137400041]
 process_mode = 3
@@ -273,3 +363,12 @@ theme_override_font_sizes/font_size = 1800
 text = "E - Esc
 "
 autowrap_mode = 2
+
+[node name="BeepSound" type="AudioStreamPlayer" parent="AlarmUI" unique_id=9896679]
+stream = ExtResource("8_b6i2q")
+
+[node name="WrongSound" type="AudioStreamPlayer" parent="AlarmUI" unique_id=461446255]
+stream = ExtResource("9_1wie7")
+
+[node name="CorrectSound" type="AudioStreamPlayer" parent="AlarmUI" unique_id=2015448318]
+stream = ExtResource("10_fynll")

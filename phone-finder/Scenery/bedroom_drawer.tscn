@@ -7,7 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://5yilo3451xva" path="res://glb_models/BedroomDrawer/BedroomDrawer_LeftFoot_Bake1_PBR_Diffuse.png" id="4_b0ddr"]
 [ext_resource type="Texture2D" uid="uid://c1yit0gad6xrh" path="res://glb_models/BedroomDrawer/BedroomDrawer_nobright_Bake1_PBR_Diffuse.png" id="5_77705"]
 [ext_resource type="Texture2D" uid="uid://ygw2yqgp0cl" path="res://glb_models/BedroomDrawer/BedroomDrawer_RightDrawer_Bake1_PBR_Diffuse.png" id="6_63oqc"]
+[ext_resource type="AudioStream" uid="uid://bq62168oxxaj7" path="res://sounds/interactions/locked.wav" id="6_b0ddr"]
 [ext_resource type="Texture2D" uid="uid://df1bh8jg31m01" path="res://glb_models/BedroomDrawer/BedroomDrawer_RightFoot_Bake1_PBR_Diffuse.png" id="7_g24p7"]
+[ext_resource type="AudioStream" uid="uid://co7heetk5amiw" path="res://sounds/interactions/drawer.wav" id="9_llka2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_typ2b"]
 resource_name = "BedroomDrawer_Baked"
@@ -341,6 +343,9 @@ mesh = SubResource("ArrayMesh_dnkw5")
 [node name="drawer2" type="Node3D" parent="." unique_id=1895661475]
 script = ExtResource("2_llka2")
 
+[node name="DoorSound" type="AudioStreamPlayer3D" parent="drawer2" unique_id=2027952]
+stream = ExtResource("9_llka2")
+
 [node name="nobright_Baked" type="MeshInstance3D" parent="drawer2" unique_id=2098198877]
 transform = Transform3D(0, -0.06533589, 4.249375e-08, -0.26082474, 1.7342207e-15, 4.249375e-08, -4.249375e-08, -1.064457e-08, -0.26082474, 1.4378136, 0.7862694, -1.0674249)
 mesh = SubResource("ArrayMesh_hhk4m")
@@ -356,6 +361,9 @@ shape = SubResource("ConcavePolygonShape3D_tp2al")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="drawer2" unique_id=230374283]
 libraries/ = SubResource("AnimationLibrary_gfiy6")
+
+[node name="LockedSound" type="AudioStreamPlayer3D" parent="drawer2" unique_id=1494058317]
+stream = ExtResource("6_b0ddr")
 
 [node name="drawer" type="Node3D" parent="." unique_id=803230948]
 script = ExtResource("2_llka2")
@@ -378,6 +386,12 @@ libraries/ = SubResource("AnimationLibrary_gfiy6")
 
 [node name="KeySpawn" type="Marker3D" parent="drawer" unique_id=624746268]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.819803, 1.0401707)
+
+[node name="DoorSound" type="AudioStreamPlayer3D" parent="drawer" unique_id=932490378]
+stream = ExtResource("9_llka2")
+
+[node name="LockedSound" type="AudioStreamPlayer3D" parent="drawer" unique_id=425900790]
+stream = ExtResource("6_b0ddr")
 
 [node name="LeftFoot_Baked" type="MeshInstance3D" parent="." unique_id=1180962096]
 transform = Transform3D(1, 0, 0, 0, 0.36250693, 0, 0, 0, -0.30722833, 0, -1.2118385, 1.8925551)
